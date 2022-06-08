@@ -1,0 +1,254 @@
+@import ../../_variables.sass
+
+.header
+  position: relative
+  background-color: white
+  padding: 10px 0px
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 4px 2px
+  &__wrapper
+    display: flex
+    align-items: center
+    align-content: center
+  &__logo
+    padding-top: 5px
+    height: 60px
+    display: flex
+    align-items: center
+    width: 17%
+    img
+      width: 180px
+  &__nav-wrapper
+    width: 20%
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-right: 20px
+  &__nav
+    width: 30%
+    padding-left: 10px
+    display: flex
+    button
+      font-family: $fontBold
+      font-size: $h5
+      border: none
+      background: none
+      position: relative
+      padding: 0
+      cursor: pointer
+      font-size: 18px
+      span
+        float: left
+        margin-right: 7px
+  .nav__resources
+    width: 160px
+    button
+      font-size: 16px
+  &__add-advertisement
+    button
+      height: 45px
+      background-color: $sloganColor
+      border-radius: 10px
+      border-color: $darkColor
+      cursor: pointer
+      @include primaryFont
+      font-size: $h5
+  &__shelters
+    margin-left: 50px
+    margin-right: 50px
+    a
+      font-family: $fontBold
+      font-size: $h6
+      position: relative
+      padding: 20px 0
+      width: 200px
+      display: block
+      text-decoration: none
+      color: black
+      svg
+        position: absolute
+        z-index: 10
+        transform: translateY(-25%)
+        width: 40px
+        height: 40px
+        right: 0
+        color: $primaryColor
+  &__favourites
+    border-right: 1px solid $darkColor
+    border-left: 1px solid $darkColor
+    height: 60px
+    width: 70px
+    button
+      display: block
+      margin: 0 auto
+      background: none
+      border: none
+      font-size: $icon3
+      color: $iconColor
+      cursor: pointer
+      line-height: 60px
+  &__auth
+    width: 15%
+    ul
+      padding-left: 10px
+      list-style: none
+      @include primaryFont
+      font-size: $h4
+      display: flex
+      justify-content: space-evenly
+      a
+        text-decoration: none
+        color: black
+  &__user-name
+    font-weight: 600
+    color: #283347
+  &__user-name:hover
+    color: #3a4f76
+  &__add-post-btn
+    padding: 0 15px
+  &__add-post-btn:hover
+    color: white
+    background-color: #283347
+    transition: 0.25s
+  &__shelters > a:hover
+    color: #3a4f76
+    transition: 0.25s
+
+.nav
+  &__breeds
+    display: flex
+    button
+      margin-right: 7px
+  &__arrow-breeds
+    position: relative
+    transition: all 500ms
+    font-size: $icon1
+    &_active
+      transition: all 500ms
+      transform: rotateZ(180deg)
+      font-size: $icon1
+  &__resources
+    button
+      margin-right: 7px
+  &__arrow-resources
+    position: relative
+    transition: all 500ms
+    font-size: $icon1
+    &_active
+      transition: all 500ms
+      transform: rotateZ(180deg)
+      font-size: $icon1
+
+.header
+  &__bg-breeds
+    position: absolute
+    height: 55px
+    width: 100vw
+    top: 80px
+    left: 0px
+    z-index: 10
+    opacity: 0%
+    visibility: hidden
+    transition: all 500ms
+    ul
+      display: flex
+      justify-content: center
+      margin: 0
+      padding: 0
+      li
+        list-style: none
+        padding-right: 50px
+        font-size: $h6
+      li:not(:last-child)
+        border-right: 1px solid #7a7a7a8f
+      a
+        display: flex
+        align-items: center
+        text-decoration: none
+        @include primaryFont
+        font-size: $h6
+        color: $secondaryColor
+      img
+        margin-top: -5px
+        width: 62px
+        height: 62px
+    &_active
+      background-color: $darkColor
+      opacity: 100%
+      visibility: visible
+      transition: all 500ms
+  &__bg-resources
+    position: absolute
+    height: 55px
+    width: 100vw
+    top: 80px
+    left: 0px
+    z-index: 10
+    opacity: 0%
+    visibility: hidden
+    transition: all 500ms
+    ul
+      display: flex
+      justify-content: center
+      margin: 0
+      padding: 0
+      align-items: center
+      align-content: center
+      height: 100%
+      text-align: center
+      li
+        list-style: none
+        @include primaryFont
+        font-size: $h6
+      a
+        color: $secondaryColor
+        padding: 0px 25px
+        text-decoration: none
+    &_active
+      background-color: $darkColor
+      opacity: 100%
+      visibility: visible
+      transition: all 500ms
+
+.header__themes
+  width: 10%
+  margin: 0 auto
+  margin-left: 30px
+  &-change
+    margin: 0 auto
+    display: flex
+    align-items: center
+    span
+      @include primaryFont
+      font-size: $h6
+    span:last-child
+      padding-left: 13px
+    input
+      visibility: hidden
+      &:checked + label
+        transform: rotate(360deg)
+        background-color: #000
+        &:before
+          transform: translateX(20px)
+          background-color: #FFF
+    label
+      display: flex
+      width: 40px
+      height: 20px
+      border: 3px solid
+      border-radius: 99em
+      position: relative
+      transition: transform .75s ease-in-out
+      transform-origin: 50% 50%
+      cursor: pointer
+      &:before
+        transition: transform .75s ease
+        transition-delay: .5s
+        content: ""
+        display: block
+        position: absolute
+        width: 12px
+        height: 12px
+        background-color: #000
+        border-radius: 50%
+        top: 1px
+        left: 2px
